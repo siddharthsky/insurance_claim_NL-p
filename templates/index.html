@@ -38,16 +38,19 @@
         <button type="submit" class="btn btn-primary">Run</button>
     </form>        
 
-
+    <!--Following code is : IF ELSE condition to show results after file validation.-->
     {% if sub == True %}
     "Successfully Uploaded"
-        <div class="card" style="width: 18rem;">
-          <img src="/static/temp/WCplot.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
+      <div class="card mb-3">
+        <img src="/static/temp/WCplot.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Word Cloud Plot</h5>
+          <p class="card-text">The bigger and bolder the word appears, the more often it's mentioned within a given text and the more important it is.</p>
+          <p class="card-text"><small class="text-body-secondary"></small></p>
         </div>
+      </div>   
+    {% elif sub == "File Uploaded is not in valid format." %}
+      "File Uploaded is not in valid format."
     {% endif %}
 
 

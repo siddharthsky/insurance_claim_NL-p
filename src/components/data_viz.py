@@ -9,10 +9,10 @@ import matplotlib.pyplot as plt
 class VizStore():
     def __init__(self,df):
         self.df = df
-        self.WCplot()
+        self.WCplot() # To initialize data word cloud plot
 
 
-    def WCplot(self):
+    def WCplot(self): # word cloud plot
         first_col = self.df.columns[0]
         colData = self.df[first_col]
         singletxt = ''
@@ -24,7 +24,7 @@ class VizStore():
         plt.figure(figsize=(10, 5))
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis('off')
-        plt.savefig('static/temp/WCplot.png')
+        plt.savefig('static/temp/WCplot.png') # saving wordcloud in static/temp/ folder
         #plt.show()
 
 
