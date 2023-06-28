@@ -34,25 +34,14 @@
 
 
   <div class="container">
-    <form action = "/pred" method = "post" enctype="multipart/form-data" >  
+    <form action = "/pred" method = "post" enctype="multipart/form-data">  
     <div class="mb-3">
-        <label for="file" class="form-label">Upload the dataset in CSV, EXCEL (xlsx).</label>
-        <input class="form-control" type="file" name="file">
+        <label for="formFile" class="form-label">Default file input example</label>
+        <input class="form-control" type="file" id="formFile">
       </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>        
 
-    {{sub}}
-
-    {% if sub == "Successfully Uploaded" %}
-      <div class="card" style="width: 18rem;">
-        <img src="/static/dwa.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    {% endif %}
 
 
 
