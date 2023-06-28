@@ -1,16 +1,17 @@
 from flask import Flask, render_template, request
 import os 
+import shutil
 from src.components.data_ingestion import DataIngestion
 
 #setting temp location
-tp = os.path.join(os.getcwd(),"temp")
+tp = os.path.join(os.getcwd(),"static/temp")
 os.makedirs(os.path.dirname(tp),exist_ok=True)
 
-
-#setting final location
-#fp = os.path.join(os.getcwd(),"predictions")
-#os.makedirs(os.path.dirname(fp),exist_ok=True)
-
+#Cleanup temporary
+try:
+    shutil.rmtree("static/temp")
+except OSError as e:
+    print(f"Error: {e.filename} - {e.strerror}")
 
 app = Flask(__name__)
 
@@ -28,7 +29,7 @@ def pred():
         raw_filez = os.path.join(tp,f.filename)
         DataIngObj = DataIngestion(raw_filez)
         DataIngObj.initialize_data_ingestion()
-
+        
         return render_template("index.html",sub = DataIngObj.sub)
 
 
