@@ -38,9 +38,9 @@
         <button type="submit" class="btn btn-primary">Run</button>
     </form>        
 
-    {{sub}}
 
-    {% if sub == "Successfully Uploaded" %}
+    {% if sub == True %}
+    "Successfully Uploaded"
         <div class="card" style="width: 18rem;">
           <img src="/static/dwa.jpg" class="card-img-top" alt="...">
           <div class="card-body">
@@ -50,7 +50,7 @@
         </div>
     {% endif %}
 
-    
+
 </div>
 
 

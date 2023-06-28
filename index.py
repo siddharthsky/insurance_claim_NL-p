@@ -25,13 +25,11 @@ def pred():
         print(request)
         f = request.files['file']
         f.save(os.path.join(tp,f.filename))
+        raw_filez = os.path.join(tp,f.filename)
+        DataIngObj = DataIngestion(raw_filez)
+        DataIngObj.initialize_data_ingestion()
 
-
-
-
-
-
-        return render_template("index.html",sub = "Successfully Uploaded")
+        return render_template("index.html",sub = DataIngObj.sub)
 
 
 
