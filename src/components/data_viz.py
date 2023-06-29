@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 class VizStore():
     def __init__(self,df):
         self.df = df
-        self.WCplot() # To initialize data word cloud plot
+        self.WCplot() # To initialize data word cloud plot automatically
 
 
     def WCplot(self): # word cloud plot

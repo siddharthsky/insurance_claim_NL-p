@@ -31,7 +31,5 @@ def pred():
         DataIngObj.initialize_data_ingestion() # initialize DataIngestion object
         return render_template("index.html",sub = DataIngObj.sub)
 
-
-
 if __name__ =="__main__":
     app.run(debug=True)
