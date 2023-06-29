@@ -13,7 +13,7 @@ class VizStore():
 
 
     def WCplot(self): # word cloud plot
-        first_col = self.df.columns[0]
+        first_col = self.df.columns[0] #column zero should be textual data
         colData = self.df[first_col]
         singletxt = ''
         for mem in colData:
