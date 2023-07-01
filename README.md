@@ -18,6 +18,8 @@
 ### About
 This project is an implementation of an automated insurance claim categorization system using Natural Language Processing (NLP) techniques. The goal of the system is to automatically categorize insurance claims based on the text descriptions provided by the claimants.
 
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
 ### Installation
 1. Clone the repository:
 
@@ -61,3 +63,5 @@ Your Name - [@siddharthxsky](https://twitter.com/siddharthxsky) - siddharthxsky@
 
 Project Link: [https://github.com/siddharthsky/insurance_claim_NL-p](https://github.com/siddharthsky/insurance_claim_NL-p)
 
+
+[product-screenshot]: https://i.imgur.com/fGCUcMP.png
