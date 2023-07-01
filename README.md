@@ -26,7 +26,9 @@ This project is an implementation of an automated insurance claim categorization
 2. Install the required packages:
 
     `pip install -r requirements.txt`
-
+3. Download the dataset and place it in the project directory.
+4. Run the main.py script to preprocess the data, extract features, train the model, and evaluate its performance.
+5. To Do prediction run app.py and upload CSV or Excel files and do the predictions.
 
 ### EDA
 
