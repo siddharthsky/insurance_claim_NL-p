@@ -12,9 +12,9 @@ from src.components.data_viz import VizStore
 class DataIngestionConfig():
     # Configuration for final file paths for train, test and raw_data
     artifact_time = "Run " + str(dt.datetime.now().strftime('%m_%d_%Y_%H_%M'))
-    train_data_path = os.path.join((f"artifacts\{artifact_time}"),"train.csv")
-    test_data_path = os.path.join ((f"artifacts\{artifact_time}"),"test.csv")
-    raw_data_path = os.path.join((f"artifacts\{artifact_time}"),"data.csv")
+    train_data_path = os.path.join((f"artifacts\T+{artifact_time}"),"train.csv")
+    test_data_path = os.path.join ((f"artifacts\T+{artifact_time}"),"test.csv")
+    raw_data_path = os.path.join((f"artifacts\T+{artifact_time}"),"data.csv")
     print(raw_data_path)
 
 class DataIngestion:
@@ -26,6 +26,15 @@ class DataIngestion:
 
     def initialize_data_ingestion(self):
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
+
+            
+
+
+
+
+
+
+
             if ".csv" in str (self.raw_file): #if file is CSV
                 df = pd.read_csv(self.raw_file)
                 df.to_csv(self.ingestion_config.raw_data_path)

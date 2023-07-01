@@ -9,6 +9,7 @@ from src.components.data_viz import VizStore
 from src.components.data_transformation import DataTransformation
 from src.components.data_ingestion import DataIngestion
                 #df.to_csv(self.ingestion_config.raw_data_path) 
+
 @dataclass
 class DataPredictionConfig():
     # Configuration for final file paths for train, test and raw_data
@@ -28,15 +29,14 @@ class DataPrediction(DataIngestion):
             #y_pred = model.predict(data_trans[0])
 
             ########################
-            #Here using the predciton model saved in artifacts/model folder.
+            #Here using the prediction model saved in artifacts/model folder.
             ########################
 
             if self.viz==True:
-                data_trans.to_csv(self.pred_config.raw_data_path)
                 GUIviz = VizStore(data_trans) # To initialize data visualization
-                GUIviz.to_csv(self.ingestion_config.raw_data_path,index=False) 
+                GUIviz.to_csv(self.pred_config.raw_data_path,index=False) #output CSV file
             else:
-                 print("--Training Data--")
+                 print("--Training Data Prediction Done--")
             
 
             
