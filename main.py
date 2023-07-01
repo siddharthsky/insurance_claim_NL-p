@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import os 
 import shutil
-from src.components.data_ingestion import DataIngestion
+from src.pipeline.predict_pipeline import PredictPipeline
 
 #setting temp location
 tp = os.path.join(os.getcwd(),"static/temp")
@@ -27,9 +27,8 @@ def pred():
         f = request.files['file']
         f.save(os.path.join(tp,f.filename)) # save file 
         raw_filez = os.path.join(tp,f.filename) # full path of file
-        DataIngObj = DataIngestion(raw_filez) # create DataIngestion object
-        DataIngObj.initialize_data_ingestion() # initialize DataIngestion object
-        return render_template("index.html",sub = DataIngObj.sub)
+        DataPred = PredictPipeline(raw_filez) # create DataIngestion object
+        return render_template("index.html",sub = DataPred.sub)
 
 if __name__ =="__main__":
     app.run(debug=True)

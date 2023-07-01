@@ -12,6 +12,7 @@ class VizStore():
         self.WCplot() # To initialize data word cloud plot automatically
 
 
+
     def WCplot(self): # word cloud plot
         first_col = self.df.columns[0] #column zero should be textual data
         colData = self.df[first_col]
@@ -24,6 +25,7 @@ class VizStore():
         plt.figure(figsize=(10, 5))
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis('off')
+        print("ZEN")
         plt.savefig('static/temp/WCplot.png') # saving wordcloud in static/temp/ folder
         #plt.show()
 
