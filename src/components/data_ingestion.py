@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 from dataclasses import dataclass
 
+from sklearn.model_selection import train_test_split
+
 #Local Components
 from src.components.data_viz import VizStore
 #from src.components.data_transformation import DataTransformation
@@ -18,41 +20,42 @@ class DataIngestionConfig():
     print(raw_data_path)
 
 class DataIngestion:
-    def __init__(self,raw_file,viz=False):
+    def __init__(self,raw_file):
         self.ingestion_config = DataIngestionConfig()
         self.raw_file = raw_file
-        self.viz= viz
         self.sub = False
 
     def initialize_data_ingestion(self):
-            os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
+        try:
+            df=pd.read_excel("notebooks\Dataset_Public_mini.xlsx")
 
-            
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
+
+            df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
+
+            train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)
+
+            train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True) # type: ignore
+
+            test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True) # type: ignore
+
+            return (
+                self.ingestion_config.train_data_path,
+                self.ingestion_config.test_data_path,
+                )
+        
+        except Exception as e:
+            print("Error processing data")
 
 
 
+if __name__ == "__main__":
+    obj=DataIngestion()
+    train_data,test_data=obj.initiate_data_ingestion()
 
+    data_trasformer=DataTransformation()
 
+    train_arr,test_arr,_=data_trasformer.initiate_data_transformation(train_data,test_data)
 
-
-            if ".csv" in str (self.raw_file): #if file is CSV
-                df = pd.read_csv(self.raw_file)
-                df.to_csv(self.ingestion_config.raw_data_path)
-                self.sub = True   
-            elif ".xlsx" in str (self.raw_file): #if file is EXCEL
-                df = pd.read_excel(self.raw_file) 
-                df.to_csv(self.ingestion_config.raw_data_path) 
-                self.sub = True   
-            else:
-                self.sub = "File Uploaded is not in valid format."
-                return None
-                #raise Exception(str(self.sub)) 
-            
-
-            #Add code to split data set here
-            #
-            #
-            #
-
-            GUIviz = VizStore(df) # To initialize data visualization
-
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))

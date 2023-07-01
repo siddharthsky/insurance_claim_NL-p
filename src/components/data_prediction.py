@@ -7,8 +7,6 @@ from dataclasses import dataclass
 #Local Components
 from src.components.data_viz import VizStore
 from src.components.data_transformation import DataTransformation
-from src.components.data_ingestion import DataIngestion
-                #df.to_csv(self.ingestion_config.raw_data_path) 
 
 @dataclass
 class DataPredictionConfig():
@@ -18,25 +16,28 @@ class DataPredictionConfig():
     final_model_path = os.path.join("artifacts","model")
     print(raw_data_path)
 
-class DataPrediction(DataIngestion):
-    def __init__(self,df,viz):
+class DataPrediction():
+    def __init__(self,df,viz=False):
         self.pred_config = DataPredictionConfig()
         self.df = df
-        DataIngestion.__init__(self, viz)
+        self.viz = viz
+        
+    def initialize_data_prediction_viz(self): 
+        data_trans = DataTransformation()
+        #y_pred = model.predict(data_trans[0])
 
-    def initialize_data_prediction(self):
-            data_trans = DataTransformation()
-            #y_pred = model.predict(data_trans[0])
+                ########################
+                #Here using the prediction model saved in artifacts/model folder.
+                ########################
+       
+        if self.viz == True: 
+            GUIviz = VizStore(data_trans) # To initialize data visualization
+            GUIviz.to_csv(self.pred_config.raw_data_path,index=False) #output CSV file # special predictions with vizualization enabled 
+        else:
+            print("PASS")
 
-            ########################
-            #Here using the prediction model saved in artifacts/model folder.
-            ########################
 
-            if self.viz==True:
-                GUIviz = VizStore(data_trans) # To initialize data visualization
-                GUIviz.to_csv(self.pred_config.raw_data_path,index=False) #output CSV file
-            else:
-                 print("--Training Data Prediction Done--")
+
             
 
             
