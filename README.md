@@ -8,7 +8,28 @@
 
 <p align="center">
   <a href="#about">About</a> •
+  <a href="#installation">Installation</a> •
   <a href="#dataset">Dataset</a> •
   <a href="#preprocessing">Preprocessing</a> •
   <a href="#Model">Predictive Modelling</a> 
 </p>
+
+
+### About
+This project is an implementation of an automated insurance claim categorization system using Natural Language Processing (NLP) techniques. The goal of the system is to automatically categorize insurance claims based on the text descriptions provided by the claimants.
+
+### Installation
+1. Clone the repository:
+
+    `git clone https://github.com/siddharthsky/Customer_Conversion_Prediction_ML-p`
+
+2. Install the required packages:
+
+    `pip install -r requirements.txt`
+
+
+### EDA
+
+
+
+### Predictive Modelling
