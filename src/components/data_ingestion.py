@@ -18,9 +18,10 @@ class DataIngestionConfig():
     print(raw_data_path)
 
 class DataIngestion:
-    def __init__(self,raw_file):
+    def __init__(self,raw_file,viz=False):
         self.ingestion_config = DataIngestionConfig()
         self.raw_file = raw_file
+        self.viz= viz
         self.sub = False
 
     def initialize_data_ingestion(self):

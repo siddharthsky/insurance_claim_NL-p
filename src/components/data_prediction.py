@@ -6,44 +6,38 @@ from dataclasses import dataclass
 
 #Local Components
 from src.components.data_viz import VizStore
-#from src.components.data_transformation import DataTransformation
-
+from src.components.data_transformation import DataTransformation
+from src.components.data_ingestion import DataIngestion
+                #df.to_csv(self.ingestion_config.raw_data_path) 
 @dataclass
 class DataPredictionConfig():
     # Configuration for final file paths for train, test and raw_data
     artifact_time = "Run " + str(dt.datetime.now().strftime('%m_%d_%Y_%H_%M'))
-    train_data_path = os.path.join((f"artifacts\{artifact_time}"),"train.csv")
-    test_data_path = os.path.join ((f"artifacts\{artifact_time}"),"test.csv")
     raw_data_path = os.path.join((f"artifacts\{artifact_time}"),"data.csv")
+    final_model_path = os.path.join("artifacts","model")
     print(raw_data_path)
 
-class DataPrediction:
-    def __init__(self,raw_file,training_data=False):
-        self.ingestion_config = DataPredictionConfig()
-        self.raw_file = raw_file
-        self.training_data = training_data
-        self.sub = False
+class DataPrediction(DataIngestion):
+    def __init__(self,df,viz):
+        self.pred_config = DataPredictionConfig()
+        self.df = df
+        DataIngestion.__init__(self, viz)
 
     def initialize_data_prediction(self):
-            os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
-            if ".csv" in str (self.raw_file): #if file is CSV
-                df = pd.read_csv(self.raw_file)
-                df.to_csv(self.ingestion_config.raw_data_path)
-                self.sub = True   
-            elif ".xlsx" in str (self.raw_file): #if file is EXCEL
-                df = pd.read_excel(self.raw_file) 
-                df.to_csv(self.ingestion_config.raw_data_path) 
-                self.sub = True   
+            data_trans = DataTransformation()
+            #y_pred = model.predict(data_trans[0])
+
+            ########################
+            #Here using the predciton model saved in artifacts/model folder.
+            ########################
+
+            if self.viz==True:
+                data_trans.to_csv(self.pred_config.raw_data_path)
+                GUIviz = VizStore(data_trans) # To initialize data visualization
+                GUIviz.to_csv(self.ingestion_config.raw_data_path,index=False) 
             else:
-                self.sub = "File Uploaded is not in valid format."
-                return None
-                #raise Exception(str(self.sub)) 
+                 print("--Training Data--")
             
 
-            #Add code to split data set here
-            #
-            #
-            #
-
-            GUIviz = VizStore(df) # To initialize data visualization
+            
 
