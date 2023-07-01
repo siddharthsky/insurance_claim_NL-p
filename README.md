@@ -18,8 +18,6 @@
 ### About
 This project is an implementation of an automated insurance claim categorization system using Natural Language Processing (NLP) techniques. The goal of the system is to automatically categorize insurance claims based on the text descriptions provided by the claimants.
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 ### Installation
 1. Clone the repository:
 
@@ -30,7 +28,7 @@ This project is an implementation of an automated insurance claim categorization
     `pip install -r requirements.txt`
 3. Download the dataset and place it in the project directory.
 4. Run the main.py script to preprocess the data, extract features, train the model, and evaluate its performance.
-5. To Do prediction run app.py and upload CSV or Excel files and do the predictions.
+5. To Do prediction run app.py and upload CSV or Excel files and get the predictions as CSV output.
 
 ### Dataset
 The dataset used in this project contains insurance claims descriptions and their corresponding categories.
@@ -47,6 +45,9 @@ column 2 - "Accident Source"
 
 ### Predictive Modelling
 
+
+With Predictions get Visualization and Analysis of the data on the same screen.
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 <!-- LICENSE -->
 ## License
