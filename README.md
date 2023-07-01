@@ -57,7 +57,7 @@ https://github.com/siddharthsky/insurance_claim_NL-p
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@siddharthxsky](https://twitter.com/siddharthxsky) - siddharthxsky@gmail.com
 
 Project Link: [https://github.com/siddharthsky/insurance_claim_NL-p](https://github.com/siddharthsky/insurance_claim_NL-p)
 
