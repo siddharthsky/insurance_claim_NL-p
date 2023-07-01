@@ -51,7 +51,7 @@ column 2 - "Accident Source"
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-https://github.com/siddharthsky/insurance_claim_NL-p
+
 
 
 <!-- CONTACT -->
