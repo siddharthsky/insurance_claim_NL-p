@@ -33,15 +33,14 @@ This project is an implementation of an automated insurance claim categorization
 ### Dataset
 The dataset used in this project contains insurance claims descriptions and their corresponding categories.
 
-column 0 - ""
+column 0 - "Claim Description"
 
-column 1 - ""
+column 1 - "Coverage Code"
   
-column 2 - ""
+column 2 - "Accident Source"
 
 
-
-
+### Preprocessing
 
 
 ### Predictive Modelling
