@@ -47,6 +47,7 @@ column 2 - "Accident Source"
 
 
 With Predictions get Visualization and Analysis of the data on the same screen.
+
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 <!-- LICENSE -->
@@ -65,4 +66,4 @@ Your Name - [@siddharthxsky](https://twitter.com/siddharthxsky) - siddharthxsky@
 Project Link: [https://github.com/siddharthsky/insurance_claim_NL-p](https://github.com/siddharthsky/insurance_claim_NL-p)
 
 
-[product-screenshot]: https://i.imgur.com/fGCUcMP.png
+[product-screenshot]: https://i.imgur.com/fGCUcMPl.png
