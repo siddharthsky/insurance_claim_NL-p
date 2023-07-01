@@ -9,6 +9,6 @@
 <p align="center">
   <a href="#about">About</a> •
   <a href="#dataset">Dataset</a> •
-  <a href="#similarity-algorithms">EDA</a> •
-  <a href="#dataset">Predictive Modelling</a> 
+  <a href="#preprocessing">Preprocessing</a> •
+  <a href="#Model">Predictive Modelling</a> 
 </p>
