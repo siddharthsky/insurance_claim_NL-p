@@ -30,8 +30,35 @@ This project is an implementation of an automated insurance claim categorization
 4. Run the main.py script to preprocess the data, extract features, train the model, and evaluate its performance.
 5. To Do prediction run app.py and upload CSV or Excel files and do the predictions.
 
-### EDA
+### Dataset
+The dataset used in this project contains insurance claims descriptions and their corresponding categories.
+
+column 0 - ""
+
+column 1 - ""
+  
+column 2 - ""
+
+
+
 
 
 
 ### Predictive Modelling
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
