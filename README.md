@@ -61,7 +61,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@siddharthxsky](https://twitter.com/siddharthxsky) - siddharthxsky@gmail.com
+Siddharth Kamble - [@siddharthxsky](https://twitter.com/siddharthxsky) - siddharthxsky@gmail.com
 
 Project Link: [https://github.com/siddharthsky/insurance_claim_NL-p](https://github.com/siddharthsky/insurance_claim_NL-p)
 
