@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import os 
 import shutil
+import glob
 from src.pipeline.predict_pipeline import PredictPipeline
 
 #setting temp location
@@ -9,7 +10,11 @@ os.makedirs(os.path.dirname(tp),exist_ok=True)
 
 #Cleanup temporary files of previous sessions
 try:
-    shutil.rmtree("static/temp")
+    pass
+    #shutil.rmtree("static/temp/")
+    files = glob.glob("static/temp/*")
+    for f in files:
+        os.remove(f)
 except OSError as e:
     print(f"Error: {e.filename} - {e.strerror}")
 

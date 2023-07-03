@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 
 #Local Components
-from src.components.data_transformation import DataTransformation
+#from src.components.data_transformation import DataTransformation
 
 
 @dataclass
@@ -27,8 +27,7 @@ class DataIngestion:
     def initialize_data_ingestion(self):
         try:
             #Here goes the ingestion code for data
-            df=pd.read_excel("notebooks\Dataset_Public_mini.xlsx")
-
+            df=pd.read_excel(os.path.join("notebooks","Dataset_Public_mini.xlsx"))
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
 
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
@@ -45,6 +44,7 @@ class DataIngestion:
                 )
         
         except Exception as e:
+            print(e)
             print("Error processing data ingestion")
 
 
