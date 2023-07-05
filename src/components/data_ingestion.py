@@ -49,6 +49,7 @@ class DataIngestion:
 
 
 
+
 if __name__ == "__main__":
     pass
     obj=DataIngestion()
